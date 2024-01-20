@@ -12,3 +12,15 @@ export const cartItemQuantityAtom = atom((get) => {
   }, 0);
   return totalQuantity;
 });
+
+export const orderSummaryAtom = atom((get) => {
+  const cartItems = get(cartAtom);
+  const subTotal = cartItems.reduce(
+    (total, item) => total + item.quantity * item.product.price,
+    0
+  );
+  const tax = subTotal * 0.1;
+  const shipping = subTotal * 0.5;
+  const totalPrice = subTotal + tax + shipping;
+  return { subTotal, tax, shipping, totalPrice };
+});

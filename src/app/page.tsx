@@ -7,7 +7,6 @@ import { useGetAllProducts } from "@/hooks/useGetAllProducts";
 const Home = () => {
   const { products, loading } = useGetAllProducts();
   const { addToCart, cartItems } = useCart();
-  console.log(cartItems);
   if (loading) return <Loading />;
   return (
     <div className="w-full flex flex-col justify-center items-center bg-white">
