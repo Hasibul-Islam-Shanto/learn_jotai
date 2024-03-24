@@ -11,14 +11,14 @@ const Home = () => {
   return (
     <div className="w-full flex flex-col justify-center items-center bg-white">
       <div className="mt-10 text-2xl font-bold text-gray-600">Products</div>
-      <div className="lg:w-4/5 sm:w-full md:w-full grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-10 p-3 mt-5">
+      <div className="lg:w-4/5 sm:w-full md:w-full grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-10 p-10 mt-5 shrink">
         {products.map((product) => (
           <div
             key={product.id}
-            className="w-80 shadow border-[1px] border-gray-200 rounded-md p-4 hover:shadow-lg transition duration-300 ease-in-out"
+            className="shadow border-[1px] border-gray-200 rounded-md p-4 hover:shadow-lg transition duration-300 ease-in-out"
           >
             <img
-              className="w-full h-60"
+              className="w-full h-32"
               src={product.image}
               alt={product.title}
             />
